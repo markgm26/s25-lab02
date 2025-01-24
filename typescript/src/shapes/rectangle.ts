@@ -1,18 +1,12 @@
-interface Rectangle {
-    width: number,
-    height: number,
-    computeArea: () => number
-}
-
-function newRectangle(width: number, height: number): Rectangle {
+import { Shape } from "./shape.js";
+function newRectangle(width: number, height: number): Shape {
     return {
-        width,
-        height,
-
-        computeArea: function (): number {
-            return width * height
+        getBaseEff: () => width,
+        getHeightEff: () => height,
+        getArea: function (): number {
+            return this.getBaseEff() * this.getHeightEff();
         }
-    }
+    };
 }
 
-export { Rectangle, newRectangle }
+export { newRectangle };

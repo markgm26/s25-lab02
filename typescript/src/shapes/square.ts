@@ -1,10 +1,13 @@
+import { Shape } from "./shape.js";
+
 function square(sideLen: number): Shape {
     return {
-        sideLen,
-        computeArea: function (): number {
-            return sideLen * sideLen
+        getBaseEff: () => sideLen,
+        getHeightEff: () => sideLen,
+        getArea: function (): number {
+            return this.getBaseEff() * this.getHeightEff();
         }
-    }
+    };
 }
 
 export { square }
